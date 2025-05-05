@@ -40,15 +40,6 @@ const Home = () => {
           See My Work
         </Link>
       </motion.div>
-
-      {/* Download CV Button */}
-      <a
-        href="/Benaia_Banda_CV.pdf"
-        download
-        className="mt-4 inline-block bg-gray-800 text-white px-5 py-3 rounded-lg font-medium hover:bg-gray-700 transition"
-      >
-        Download CV
-      </a>
     </motion.section>
   )
 }
