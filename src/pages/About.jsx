@@ -1,10 +1,15 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const About = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
       <h2 className="text-2xl font-semibold mb-2">About Me</h2>
-      <p>I’m Benaia Banda, a fullstack developer and entrepreneur...</p>
+      <p>I’m Benaia Banda, a fullstack developer and entrepreneur, focused on building solutions that matter.</p>
 
       {/* Download CV Button */}
       <a
@@ -14,7 +19,7 @@ const About = () => {
       >
         Download CV
       </a>
-    </div>
+    </motion.div>
   )
 }
 
