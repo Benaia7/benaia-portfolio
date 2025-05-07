@@ -40,28 +40,32 @@ const Projects = () => {
               ))}
             </ul>
 
-            <div className="mt-4 space-x-4">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-blue-400 hover:text-blue-300 hover:underline transition"
-                >
-                  GitHub →
-                </a>
-              )}
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-purple-400 hover:text-purple-300 hover:underline transition"
-                >
-                  Live Demo →
-                </a>
-              )}
-            </div>
+            {/* Show links only if they exist */}
+            {(project.github || project.demo) && (
+              <div className="mt-4 space-x-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-blue-400 hover:text-blue-300 hover:underline transition"
+                  >
+                    GitHub 
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-purple-400 hover:text-purple-300 hover:underline transition"
+                  >
+                    Live Demo 
+                  </a>
+                )}
+              </div>
+            )}
+
           </motion.div>
         ))}
       </div>
