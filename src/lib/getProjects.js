@@ -1,14 +1,14 @@
 import { createClient } from '@sanity/client'
 
 const client = createClient({
-  projectId: 's9chf839',  
+  projectId: 's9chf839',
   dataset: 'production',
-  useCdn: false, 
+  useCdn: false,
   apiVersion: '2023-01-01',
 })
 
 export const getProjects = async () => {
-  const query = `*[_type == "project"] | order(orderRank) {
+  const query = `*[_type == "project" && defined(orderRank)] | order(orderRank){
     _id,
     title,
     description,
