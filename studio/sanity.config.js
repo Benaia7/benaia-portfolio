@@ -1,8 +1,8 @@
 import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
+import { deskTool } from 'sanity/desk'         
 import { visionTool } from '@sanity/vision'
-import { schemaTypes } from './schemaTypes'
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
+import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
@@ -17,16 +17,15 @@ export default defineConfig({
         S.list()
           .title('Content')
           .items([
-            // 👇 Drag-and-drop project ordering
             orderableDocumentListDeskItem({
               type: 'project',
               title: 'Order Projects',
               S,
               context,
             }),
-            // 👇 Default document views (optional fallback for other types)
+            S.documentTypeListItem('project').title('All Projects'),
             ...S.documentTypeListItems().filter(
-              (listItem) => listItem.getId() !== 'project'
+              (item) => item.getId() !== 'project'
             ),
           ]),
     }),
